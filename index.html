@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>To-Do List</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>To-Do List</h1>
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Add a new task" required>
+            <div class="input-container">
+                <div class="input-container priority-container">
+                    <label for="priorityInput">Priority:</label>
+                    <div>
+                        <input type="radio" id="lowPriority" name="priority" value="Low">
+                        <label for="lowPriority">Priority: Low</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="mediumPriority" name="priority" value="Medium">
+                        <label for="mediumPriority">Priority: Medium</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="highPriority" name="priority" value="High">
+                        <label for="highPriority">Priority: High</label>
+                    </div>
+                </div>
+                <div class="priority-container">
+                    <h2>Select Due date:</h2>
+                    <input type="date" id="dueDateInput">
+                    <h2>Select Due Time:</h2>
+                    <input type="time" id="dueTimeInput"><br>
+                    <button type="submit">Add Task</button>
+                </div>
+            </div>
+        </form>
+        <h2>Task list</h2>
+        <ul id="taskList"></ul>
+       
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Task</h2>
+            <label for="editedDescription">Description:</label>
+            <input type="text" id="editedDescription">
+            <label for="editedPriority">Priority:</label>
+            <select id="editedPriority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <label for="editedDueDate">Due Date:</label>
+            <input type="date" id="editedDueDate">
+            <label for="editedDueTime">Due Time:</label>
+            <input type="time" id="editedDueTime">
+            <button id="saveChangesBtn">Save Changes</button>
+            <button id="cancelBtn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
